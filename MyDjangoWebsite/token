@@ -1,0 +1,20 @@
+HTTP/1.1 200 OK
+Date: Mon, 21 Feb 2022 12:27:51 GMT
+Server: WSGIServer/0.2 CPython/3.8.10
+Content-Type: application/json
+Vary: Accept
+Allow: POST, OPTIONS
+X-Frame-Options: DENY
+Content-Length: 483
+X-Content-Type-Options: nosniff
+Referrer-Policy: same-origin
+Cross-Origin-Opener-Policy: same-origin
+
+curl -i -X POST -H "Accept: application/json" -H "Content-Type: application/json"  -d '{"username":"admin", "password":"admin3210"}' localhost:6999/api/token/
+
+refresh":"eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJ0b2tlbl90eXBlIjoicmVmcmVzaCIsImV4cCI6MTY0NTUzNDQ3MywiaWF0IjoxNjQ1NDQ4MDczLCJqdGkiOiJjMjYwMWFiODUxNDk0YTM3OTIwN2NlMjQyN2I0NzI2MSIsInVzZXJfaWQiOjR9.o0Xqqbmb90_cfQijUKyFKi74d_uz9GVSJXISN3-WKmo","access":"eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNjQ1NDQ4MzczLCJpYXQiOjE2NDU0NDgwNzMsImp0aSI6IjBiNWRjN2RlMTZkNzRiZmRhMmEyYzQ0YmQxYjRmZWI3IiwidXNlcl9pZCI6NH0.Od0h8TzLA1_CzTNaVzH5wSqt_QQUT9onz85tG7KRgKU"
+
+
+curl -i -X POST -H "Accept: application/json" -H "Content-Type: application/json"  -d '{"username":"admin", "password":"admin3210"}' localhost:6999/api/users
+
+curl -i -X GET: a -H "Accept: application/json" -H "Content-Type: application/json" -H "Authorization: Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNjQ1NDQ4NzY4LCJpYXQiOjE2NDU0NDgwNzMsImp0aSI6ImUwMzNjZjM0NDE2YTRjNDc4Mzk1NjFkMWNhYWI1NzAwIiwidXNlcl9pZCI6NH0.BuJ5LdM4RaduGLkHmyNnWUUELDqB2nFMNrxd0FYuCaA" localhost:6999/api/users/

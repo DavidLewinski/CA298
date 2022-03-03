@@ -1,0 +1,46 @@
+{% extends "base.html" %}
+
+{% block title %}Order Successfully Completed!{% endblock %}
+
+{% block content %}
+    <h2>Thank you for your order!</h2>
+    {% if empty %}
+        <p>Your shopping basket is empty, continue shopping <a href="/">here</a></p>
+    {% else %}
+    <center>
+        <table width="75%" class="bordered table">
+            <tbody>
+                {% for item in SBI %}
+                    <tr>
+                        <td>
+                            <strong>Name:</strong><br/>{{item.ProductID.name}} 
+                            <br/>
+                            <strong>Description:</strong><br/>{{item.ProductID.description}}
+                        </td>
+                        <td><a href="/products/{{item.ProductID.id}}"><img src="{{item.ProductID.image.url}}" width="360" height="220"/></a></td>
+                        <td><strong>Quantity</strong><br/>{{item.Quantity}}</td>
+                        <td><strong>Price</strong><br/><a style="color:red">€ {{item.Price}}</a></td>
+                    </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+    <br>
+    {% endif %}
+    </center>
+    <table width="50%" class="bordered table">
+        <tbody>
+            <tr>
+                <td></td>
+                <td>
+                    <strong>Shipping to:</strong><br>
+                    {{ order.ShippingCountry }},<br>
+                    {{ order.ShippingAddress1 }},<br>
+                    {{ order.ShippingAddress2 }},<br>
+                    {{ order.ShippingAddressZip }}<br>
+                </td>
+                <td>
+                    <strong>Total Price:</strong><br>
+                    <a style="color:red">€ {{ order.TotalPrice }}</a>
+                </td>
+
+{% endblock %}
