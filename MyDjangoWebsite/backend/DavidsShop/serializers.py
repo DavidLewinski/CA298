@@ -12,14 +12,14 @@ class OrderSerializer(serializers.HyperlinkedModelSerializer):
         model = Order
         fields = ['id', 'BasketID', 'DateTimeOrdered', 'UserID']
 
-class BasketItemsSerializer(serializers.ModelSerializer):
+class BasketItemSerializer(serializers.ModelSerializer):
     class Meta:
         model = BasketItem
         fields = ['id', 'product_name', 'Quantity', 'price']
 
 
 class BasketSerializer(serializers.ModelSerializer):
-    items = BasketItemsSerializer(many=True, read_only=True, source='basketitems_set')
+    items = BasketItemSerializer(many=True, read_only=True, source='basketitem_set')
 
     class Meta:
         model = Basket
@@ -67,7 +67,7 @@ class AddBasketItemSerializer(serializers.ModelSerializer):
             else:
                 new_basket_item = BasketItem.objects.create(BasketID=shopping_basket, ProductID=ProductID)
                 return new_basket_item
-            
+
         else:
             return None
 
