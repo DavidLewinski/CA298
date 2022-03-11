@@ -1,5 +1,5 @@
 run:
-	python3 manage.py runserver 0.0.0.0:6999
+	python3 manage.py runserver localhost:6999
 
 makemigrations:
 	python3 manage.py makemigrations
