@@ -1,0 +1,32 @@
+{% extends 'base.html' %}
+
+{% block title %}Order History{% endblock %}
+
+{% block content %}
+<table width="100%" class="bordered table">
+    <thead>
+        <tr>
+            <th></th>
+            <th>Order ID</th>
+            <th>Ordered on</th> 
+            <th>Shipping to</th>
+            <th>Total price €</th>
+        </tr>
+    </thead>
+    <tbody>
+        {% for ord in orders %}
+            <tr>
+                <td></td>
+                <td>{{ ord.id }}</td>
+                <td>{{ ord.DateTimeOrdered }}</td>  
+                <td>
+                {{ ord.ShippingCountry  }},<br>
+                {{ ord.ShippingAddress1  }},<br>
+                {{ ord.ShippingAddress2  }},<br>
+                {{ ord.ShippingAddressZip  }}<br>
+                <td style="color:red"> {{ ord.TotalPrice }}</td>
+            </tr>
+        {% endfor %}
+    </tbody>
+</table>
+{% endblock %}
